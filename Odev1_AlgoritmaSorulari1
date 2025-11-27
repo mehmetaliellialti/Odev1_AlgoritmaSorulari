@@ -1,0 +1,30 @@
+using System;
+
+Console.WriteLine("Pozitif bir sayı giriniz:");
+//string girilenMetin = Console.ReadLine();
+//int sayi = int.Parse(girilenMetin);
+
+if (!int.TryParse(Console.ReadLine(), out int sayi) || sayi <= 0)
+{
+    Console.WriteLine("Lütfen pozitif bir sayı girin.");
+    return;
+}
+
+int[] arrayList = new int[sayi];
+
+Console.WriteLine(sayi + " adet pozitif sayı giriniz:");
+
+for (int i = 0; i < sayi; i++)
+{
+    string girilenMetin1 = Console.ReadLine();
+    int sayi1 = int.Parse(girilenMetin1);
+    
+    arrayList[i] = sayi1;
+}
+
+Console.WriteLine("Girilen çift sayılar: ");
+foreach (int eleman in arrayList)
+{
+    if (eleman %  2 == 0)
+    Console.WriteLine(eleman);
+}
