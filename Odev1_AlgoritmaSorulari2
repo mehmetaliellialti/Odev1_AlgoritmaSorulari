@@ -1,0 +1,35 @@
+using System;
+
+Console.Write("n değerini giriniz (pozitif): ");
+int n = int.Parse(Console.ReadLine());
+
+Console.Write("m değerini giriniz (pozitif): ");
+int m = int.Parse(Console.ReadLine());
+
+int[] sayilar = new int[n];
+
+// n adet pozitif sayı alma
+for (int i = 0; i < n; i++)
+{
+    int girilen;
+
+    do
+    {
+        Console.Write((i + 1) + ". pozitif sayıyı giriniz: ");
+        girilen = int.Parse(Console.ReadLine());
+    }
+    while (girilen <= 0);
+
+    sayilar[i] = girilen;
+}
+
+// m'ye eşit veya m'ye tam bölünenleri yazdırma
+Console.WriteLine("\nm'ye eşit veya m'ye tam bölünen sayılar:");
+
+foreach (int eleman in sayilar)
+{
+    if (eleman == m || eleman % m == 0)
+    {
+        Console.WriteLine(eleman);
+    }
+}
