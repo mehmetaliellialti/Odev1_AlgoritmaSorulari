@@ -1,0 +1,20 @@
+using System;
+
+Console.Write("Bir cümle giriniz: ");
+string cumle = Console.ReadLine();
+
+// Kelime sayısı
+string[] kelimeler = cumle.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+int kelimeSayisi = kelimeler.Length;
+
+// Harf sayısı (boşluklar hariç)
+int harfSayisi = 0;
+
+foreach (char c in cumle)
+{
+    if (char.IsLetter(c))   // Sadece harfleri sayar
+        harfSayisi++;
+}
+
+Console.WriteLine("\nToplam kelime sayısı: " + kelimeSayisi);
+Console.WriteLine("Toplam harf sayısı: " + harfSayisi);
